@@ -1,0 +1,25 @@
+.ict-btn-primary{
+
+    background:var(--ict-primary);
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.ict-btn-primary:hover{
+
+    background:var(--ict-primary-dark);
+
+    color:white;
+
+}

@@ -1,0 +1,21 @@
+:root{
+
+    --ict-primary:#0C4DA2;
+
+    --ict-primary-dark:#083B7A;
+
+    --ict-gold:#D4AF37;
+
+    --ict-white:#FFFFFF;
+
+    --ict-light:#F8F9FA;
+
+    --ict-gray:#6C757D;
+
+    --ict-dark:#343A40;
+
+    --ict-shadow:0 6px 20px rgba(0,0,0,.08);
+
+    --ict-radius:12px;
+
+}

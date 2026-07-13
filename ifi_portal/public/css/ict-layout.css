@@ -1,0 +1,73 @@
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#fff;
+
+    color:var(--ict-dark);
+
+}
+
+.ict-header{
+
+    position:sticky;
+
+    top:0;
+
+    background:#fff;
+
+    z-index:999;
+
+    border-bottom:1px solid #ececec;
+
+    box-shadow:var(--ict-shadow);
+
+}
+
+.ict-container{
+
+    max-width:1320px;
+
+    margin:auto;
+
+    padding:16px 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.ict-logo img{
+
+    height:60px;
+
+}
+
+.ict-nav{
+
+    display:flex;
+
+    gap:36px;
+
+}
+
+.ict-nav a{
+
+    color:var(--ict-dark);
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.25s;
+
+}
+
+.ict-nav a:hover{
+
+    color:var(--ict-primary);
+
+}
