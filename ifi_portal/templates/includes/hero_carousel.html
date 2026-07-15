@@ -1,0 +1,52 @@
+<div class="swiper heroSwiper">
+
+    <div class="swiper-wrapper">
+
+        {% for banner in banners %}
+
+        <div class="swiper-slide">
+
+            <section class="hero-banner"
+                style="background-image:url('{{ banner.hero_image }}')">
+
+                <div class="hero-overlay"></div>
+
+                <div class="container hero-content">
+
+                    <h1>{{ banner.title }}</h1>
+
+                    <p>{{ banner.subtitle }}</p>
+
+                    <div class="hero-buttons">
+
+                        {% if banner.primary_label %}
+                        <a href="{{ banner.primary_url }}" class="btn btn-primary">
+                            {{ banner.primary_label }}
+                        </a>
+                        {% endif %}
+
+                        {% if banner.secondary_label %}
+                        <a href="{{ banner.secondary_url }}" class="btn btn-light">
+                            {{ banner.secondary_label }}
+                        </a>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+
+    <div class="swiper-button-next"></div>
+
+</div>

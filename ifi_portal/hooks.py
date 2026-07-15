@@ -256,3 +256,15 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+app_include_css = [
+    "/assets/ifi_portal/css/swiper-bundle.min.css",
+    "/assets/ifi_portal/css/ict-theme.css",
+    "/assets/ifi_portal/css/ict-layout.css",
+    "/assets/ifi_portal/css/ict-components.css",
+    "/assets/ifi_portal/css/ict-responsive.css",
+]
+
+app_include_js = [
+    "/assets/ifi_portal/js/swiper-bundle.min.js",
+    "/assets/ifi_portal/js/ict.js",
+]
