@@ -1,0 +1,246 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2026-07-24 08:21:30.201872",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ieu6",
+  "codigo",
+  "nombre",
+  "is_group",
+  "parent_estructura_financiera_institucional",
+  "activo",
+  "column_break_uoij",
+  "observaciones",
+  "orden",
+  "section_break_djoh",
+  "naturaleza_financiera",
+  "column_break_mayc",
+  "tipo_nodo_financiero",
+  "section_break_suue",
+  "permite_movimientos",
+  "participa_consolidacion",
+  "column_break_dqhy",
+  "requiere_programa",
+  "requiere_proyecto",
+  "requiere_fondo",
+  "column_break_sxun",
+  "visible_presupuesto",
+  "visible_informes",
+  "section_break_jtgi",
+  "es_calculado",
+  "metodo_calculo",
+  "section_break_feps",
+  "old_parent",
+  "lft",
+  "rgt"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ieu6",
+   "fieldtype": "Section Break",
+   "label": "Informacion General"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "label": "Codigo",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "parent_estructura_financiera_institucional",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Estructura Financiera Institucional",
+   "options": "Estructura Financiera Institucional"
+  },
+  {
+   "default": "0",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "label": "Activo"
+  },
+  {
+   "fieldname": "column_break_uoij",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "orden",
+   "fieldtype": "Int",
+   "label": "Orden"
+  },
+  {
+   "fieldname": "section_break_djoh",
+   "fieldtype": "Section Break",
+   "label": "Clasificacion"
+  },
+  {
+   "fieldname": "naturaleza_financiera",
+   "fieldtype": "Link",
+   "label": "Naturaleza Financiera",
+   "options": "Naturaleza Financiera"
+  },
+  {
+   "fieldname": "column_break_mayc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tipo_nodo_financiero",
+   "fieldtype": "Link",
+   "label": "Tipo Nodo Financiero",
+   "options": "Tipo Nodo Financiero"
+  },
+  {
+   "fieldname": "section_break_suue",
+   "fieldtype": "Section Break",
+   "label": "Comportamiento"
+  },
+  {
+   "default": "0",
+   "fieldname": "permite_movimientos",
+   "fieldtype": "Check",
+   "label": "Permite movimientos"
+  },
+  {
+   "default": "0",
+   "fieldname": "participa_consolidacion",
+   "fieldtype": "Check",
+   "label": "Participa Consolidacion"
+  },
+  {
+   "fieldname": "column_break_dqhy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_programa",
+   "fieldtype": "Check",
+   "label": "Requiere Programa"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_proyecto",
+   "fieldtype": "Check",
+   "label": "Requiere proyecto"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_fondo",
+   "fieldtype": "Check",
+   "label": "Requiere Fondo"
+  },
+  {
+   "fieldname": "column_break_sxun",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "visible_presupuesto",
+   "fieldtype": "Check",
+   "label": "Visible Presupuesto"
+  },
+  {
+   "default": "0",
+   "fieldname": "visible_informes",
+   "fieldtype": "Check",
+   "label": "Visible Informes"
+  },
+  {
+   "fieldname": "section_break_jtgi",
+   "fieldtype": "Section Break",
+   "label": "C\u00e1lculo"
+  },
+  {
+   "default": "0",
+   "fieldname": "es_calculado",
+   "fieldtype": "Check",
+   "label": "Es Calculado"
+  },
+  {
+   "fieldname": "metodo_calculo",
+   "fieldtype": "Link",
+   "label": "M\u00e9todo de Calculo",
+   "options": "Metodo de Calculo"
+  },
+  {
+   "fieldname": "section_break_feps",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Old Parent",
+   "options": "Estructura Financiera Institucional"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2026-07-26 16:02:03.660101",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Estructura Financiera Institucional",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_estructura_financiera_institucional",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre"
+}

@@ -1,0 +1,289 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "PLA-.YYYY.-.#########",
+ "creation": "2026-07-20 21:00:38.962523",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "usuario_captura",
+  "unidad_organizacional",
+  "nombre_uo",
+  "cuenta_consignacion",
+  "fecha",
+  "column_break_uduu",
+  "usuario_responsable_actual",
+  "calendario",
+  "entrega",
+  "total_recaudado",
+  "column_break_uzzq",
+  "total_planilla",
+  "section_break_ehng",
+  "estado",
+  "nivel_aprobacion",
+  "column_break_zzhs",
+  "tarea_aprobacion",
+  "seccion_donaciones",
+  "donaciones",
+  "total_recibos",
+  "seccion_consignaciones",
+  "consignaciones",
+  "seccion_totales",
+  "column_break_mnwh",
+  "total_efectivo",
+  "total_cheque",
+  "total_transferencia",
+  "column_break_gebi",
+  "total_a_consignar",
+  "total_consignado",
+  "diferencia_consignacion"
+ ],
+ "fields": [
+  {
+   "fieldname": "usuario_captura",
+   "fieldtype": "Link",
+   "label": "Usuario Actual",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unidad_organizacional",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Unidad Organizacional",
+   "options": "Unidad Organizacional",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "unidad_organizacional.nombre",
+   "fieldname": "nombre_uo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Nombre U.O.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cuenta_consignacion",
+   "fieldtype": "Link",
+   "label": "Consignar En",
+   "options": "Bank Account",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "fecha",
+   "fieldtype": "Date",
+   "label": "Fecha",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uduu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "usuario_responsable_actual",
+   "fieldtype": "Link",
+   "label": "Usuario Responsable Actual",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calendario",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Calendario",
+   "options": "Calendario",
+   "read_only": 1
+  },
+  {
+   "fieldname": "entrega",
+   "fieldtype": "Int",
+   "label": "Entrega",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_recaudado",
+   "fieldtype": "Currency",
+   "label": "Total Recaudado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uzzq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_planilla",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Planilla",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ehng",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "estado",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Estado",
+   "options": "Borrador\nEnviado Territorial\nEnviado Divisional\nAprobado\nContabilizar\nContabilizado\nAnulado"
+  },
+  {
+   "fetch_from": "cuenta_consignacion.custom_nivel_de_aprobacion",
+   "fieldname": "nivel_aprobacion",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Nivel Aprobacion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_zzhs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tarea_aprobacion",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Tarea Aprobaci\u00f3n",
+   "options": "ToDo",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!doc.__islocal;",
+   "fieldname": "seccion_donaciones",
+   "fieldtype": "Section Break",
+   "label": "Detalle Donaciones"
+  },
+  {
+   "fieldname": "donaciones",
+   "fieldtype": "Table",
+   "label": "Donaciones",
+   "options": "Planilla Donacion"
+  },
+  {
+   "fieldname": "total_recibos",
+   "fieldtype": "Int",
+   "label": "Cantidad de recibos",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!doc.__islocal;",
+   "fieldname": "seccion_consignaciones",
+   "fieldtype": "Section Break",
+   "label": "Detalle Consignaciones"
+  },
+  {
+   "fieldname": "consignaciones",
+   "fieldtype": "Table",
+   "label": "Consignaciones",
+   "options": "Planilla Consignacion"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal;",
+   "fieldname": "seccion_totales",
+   "fieldtype": "Section Break",
+   "label": "Totales"
+  },
+  {
+   "fieldname": "column_break_mnwh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_efectivo",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Efectivo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cheque",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Cheque",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_transferencia",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Transferencia",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gebi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_a_consignar",
+   "fieldtype": "Currency",
+   "label": "Total a Consignar",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_consignado",
+   "fieldtype": "Currency",
+   "label": "Total Consignado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "diferencia_consignacion",
+   "fieldtype": "Currency",
+   "label": "Diferencia Consignaci\u00f3n",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:15:02.022621",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Planilla",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Lider Distrital",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

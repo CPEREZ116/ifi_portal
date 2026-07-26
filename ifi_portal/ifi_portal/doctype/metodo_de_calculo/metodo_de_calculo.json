@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2026-07-24 09:12:25.951152",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informacion_general_section",
+  "codigo",
+  "nombre",
+  "activo",
+  "column_break_oeyj",
+  "descripcion",
+  "section_break_vtzb",
+  "clasificacion_column",
+  "requiere_formula",
+  "requiere_politica",
+  "capacidades_column",
+  "permite_movimientos",
+  "usa_hijos",
+  "usa_periodos",
+  "usa_presupuesto",
+  "usa_ejecutado",
+  "section_break_hoof",
+  "observaciones"
+ ],
+ "fields": [
+  {
+   "fieldname": "informacion_general_section",
+   "fieldtype": "Section Break",
+   "label": "Informacion General"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Codigo",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "label": "Activo"
+  },
+  {
+   "fieldname": "column_break_oeyj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Small Text",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "section_break_vtzb",
+   "fieldtype": "Section Break",
+   "label": "Paremetros"
+  },
+  {
+   "fieldname": "clasificacion_column",
+   "fieldtype": "Column Break",
+   "label": "Clasificacion"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_formula",
+   "fieldtype": "Check",
+   "label": "Requiere Formula"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_politica",
+   "fieldtype": "Check",
+   "label": "Requiere Politica"
+  },
+  {
+   "fieldname": "capacidades_column",
+   "fieldtype": "Column Break",
+   "label": "Capacidades"
+  },
+  {
+   "default": "0",
+   "fieldname": "permite_movimientos",
+   "fieldtype": "Check",
+   "label": "Permite Movimientos"
+  },
+  {
+   "default": "0",
+   "fieldname": "usa_hijos",
+   "fieldtype": "Check",
+   "label": "Usa Hijos"
+  },
+  {
+   "default": "0",
+   "fieldname": "usa_periodos",
+   "fieldtype": "Check",
+   "label": "Usa Periodo"
+  },
+  {
+   "default": "0",
+   "fieldname": "usa_presupuesto",
+   "fieldtype": "Check",
+   "label": "Usa Presupuesto"
+  },
+  {
+   "default": "0",
+   "fieldname": "usa_ejecutado",
+   "fieldtype": "Check",
+   "label": "Usa Ejecutado"
+  },
+  {
+   "fieldname": "section_break_hoof",
+   "fieldtype": "Section Break",
+   "label": "Otros"
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:01:38.978808",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Metodo de Calculo",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre"
+}

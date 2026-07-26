@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2026-07-24 14:47:12.596345",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informaci\u00f3n_general_section",
+  "codigo",
+  "nombre",
+  "activo",
+  "column_break_gffv",
+  "descripcion",
+  "section_break_sxoq",
+  "doctype_origen",
+  "evento_financiero",
+  "section_break_zdhd",
+  "genera_automatica",
+  "permite_reversion",
+  "requiere_aprobacion"
+ ],
+ "fields": [
+  {
+   "fieldname": "informaci\u00f3n_general_section",
+   "fieldtype": "Section Break",
+   "label": "Informaci\u00f3n General"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Codigo",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "label": "Activo"
+  },
+  {
+   "fieldname": "column_break_gffv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Small Text",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "section_break_sxoq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "doctype_origen",
+   "fieldtype": "Link",
+   "label": "Doctype ERPNext",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "evento_financiero",
+   "fieldtype": "Link",
+   "label": "Evento Financiero",
+   "options": "Evento Financiero"
+  },
+  {
+   "fieldname": "section_break_zdhd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "genera_automatica",
+   "fieldtype": "Check",
+   "label": "Genera Transacci\u00f3n Autom\u00e1tica"
+  },
+  {
+   "default": "0",
+   "fieldname": "permite_reversion",
+   "fieldtype": "Check",
+   "label": "Permite Reversi\u00f3n"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_aprobacion",
+   "fieldtype": "Check",
+   "label": "Requiere Aprobaci\u00f3n"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 15:59:41.533021",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Origen de Transaccion Financiera",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre"
+}

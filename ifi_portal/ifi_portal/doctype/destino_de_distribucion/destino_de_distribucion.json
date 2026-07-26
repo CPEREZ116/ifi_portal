@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-07-15 11:07:40.359010",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tipo_destino",
+  "porcentaje",
+  "prioridad",
+  "activo"
+ ],
+ "fields": [
+  {
+   "fieldname": "tipo_destino",
+   "fieldtype": "Link",
+   "label": "Tipo Destino",
+   "options": "Tipo Destino Distribucion"
+  },
+  {
+   "fieldname": "porcentaje",
+   "fieldtype": "Percent",
+   "label": "Porcentaje"
+  },
+  {
+   "fieldname": "prioridad",
+   "fieldtype": "Int",
+   "label": "Prioridad"
+  },
+  {
+   "default": "0",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "label": "Activo"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-26 16:07:00.412116",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Destino de Distribucion",
+ "owner": "cesar.perezv@cruzadaestudiantil.org",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

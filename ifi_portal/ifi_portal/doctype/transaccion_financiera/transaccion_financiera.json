@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "TRA-.YYYY.-.#########",
+ "creation": "2026-07-24 13:55:42.787771",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informacion_general_section",
+  "fecha",
+  "estado",
+  "origen_de_transaccion",
+  "column_break_tihc",
+  "unidad_organizacional",
+  "usuario_proceso",
+  "fecha_proceso",
+  "movimientos_section",
+  "movimientos_financieros",
+  "section_break_hrqz",
+  "total_debitos",
+  "total_creditos",
+  "total_movimientos",
+  "column_break_vfiv",
+  "referencia_externa",
+  "politica_ejecutada",
+  "evento_financiero"
+ ],
+ "fields": [
+  {
+   "fieldname": "informacion_general_section",
+   "fieldtype": "Section Break",
+   "label": "Informacion General"
+  },
+  {
+   "fieldname": "fecha",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "fieldname": "estado",
+   "fieldtype": "Select",
+   "label": "Estado",
+   "options": "Borrador\nProcesada\nContabilizada\nAnulada"
+  },
+  {
+   "fieldname": "origen_de_transaccion",
+   "fieldtype": "Link",
+   "label": "Origen de Transaccion",
+   "options": "Origen de Transaccion Financiera",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tihc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unidad_organizacional",
+   "fieldtype": "Link",
+   "label": "Unidad Organizacional",
+   "options": "Unidad Organizacional"
+  },
+  {
+   "fieldname": "usuario_proceso",
+   "fieldtype": "Link",
+   "label": "Usuario Proceso",
+   "options": "User"
+  },
+  {
+   "fieldname": "fecha_proceso",
+   "fieldtype": "Date",
+   "label": "Fecha Proceso"
+  },
+  {
+   "fieldname": "movimientos_section",
+   "fieldtype": "Section Break",
+   "label": "Movimientos"
+  },
+  {
+   "fieldname": "movimientos_financieros",
+   "fieldtype": "Table",
+   "label": "Movimientos Financieros",
+   "options": "Movimiento Financiero"
+  },
+  {
+   "fieldname": "section_break_hrqz",
+   "fieldtype": "Section Break",
+   "label": "Totales"
+  },
+  {
+   "fieldname": "total_debitos",
+   "fieldtype": "Currency",
+   "label": "Total Debitos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_creditos",
+   "fieldtype": "Currency",
+   "label": "Total Creditos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_movimientos",
+   "fieldtype": "Currency",
+   "label": "Total Movimientos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vfiv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "referencia_externa",
+   "fieldtype": "Data",
+   "label": "Referencia Externa",
+   "read_only": 1
+  },
+  {
+   "fieldname": "politica_ejecutada",
+   "fieldtype": "Link",
+   "label": "Politica Ejecutada",
+   "options": "Politica Financiera",
+   "read_only": 1
+  },
+  {
+   "fieldname": "evento_financiero",
+   "fieldtype": "Link",
+   "label": "Evento Financiero",
+   "options": "Evento Financiero",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:00:06.047898",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Transaccion Financiera",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-07-15 07:21:23.754268",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "concepto",
+  "subconcepto",
+  "valor",
+  "observacion"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "concepto",
+   "fieldtype": "Link",
+   "label": "Concepto",
+   "options": "Concepto"
+  },
+  {
+   "columns": 2,
+   "fieldname": "subconcepto",
+   "fieldtype": "Link",
+   "label": "Subconcepto",
+   "options": "Subconcepto"
+  },
+  {
+   "columns": 2,
+   "fieldname": "valor",
+   "fieldtype": "Currency",
+   "label": "Valor"
+  },
+  {
+   "columns": 2,
+   "fieldname": "observacion",
+   "fieldtype": "Data",
+   "label": "Observaci\u00f3n"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-26 16:07:27.644529",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Concepto de Donacion",
+ "owner": "cesar.perezv@cruzadaestudiantil.org",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

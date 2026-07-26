@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2026-07-24 10:49:12.100113",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informacion_general_section",
+  "codigo",
+  "nombre",
+  "activo",
+  "column_break_ikex",
+  "descripcion",
+  "section_break_sucy",
+  "requiere_porcentaje",
+  "requiere_formula",
+  "requiere_referencia",
+  "requiere_valor_fijo"
+ ],
+ "fields": [
+  {
+   "fieldname": "informacion_general_section",
+   "fieldtype": "Section Break",
+   "label": "Informacion General"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "label": "Codigo",
+   "unique": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre"
+  },
+  {
+   "default": "0",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "label": "Activo"
+  },
+  {
+   "fieldname": "column_break_ikex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Small Text",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "section_break_sucy",
+   "fieldtype": "Section Break",
+   "label": "Configuracion"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_porcentaje",
+   "fieldtype": "Check",
+   "label": "Requiere Porcentaje"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_formula",
+   "fieldtype": "Check",
+   "label": "Requiere Formula"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_referencia",
+   "fieldtype": "Check",
+   "label": "Requiere Referencia"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_valor_fijo",
+   "fieldtype": "Check",
+   "label": "Requiere Valor Fijo"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:00:28.542536",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Tipo de Valor",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre"
+}

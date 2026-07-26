@@ -1,0 +1,220 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2026-07-24 09:51:28.256965",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informacion_general_section",
+  "codigo",
+  "nombre",
+  "naturaleza_financiera",
+  "nombre_naturaleza",
+  "descripcion",
+  "column_break_ausa",
+  "evento_financiero",
+  "nombre_ef",
+  "nodo_efi_base",
+  "nombre_nodo_efi_base",
+  "prioridad",
+  "activo",
+  "section_break_wpyl",
+  "fecha_inicio",
+  "fecha_fin",
+  "column_break_legx",
+  "version",
+  "section_break_opfi",
+  "ejecutar_automaticamente",
+  "permitir_manual",
+  "detener_si_error",
+  "column_break_wrix",
+  "section_break_bjqy",
+  "politica_financiera_accion",
+  "section_break_usxh",
+  "observaciones"
+ ],
+ "fields": [
+  {
+   "fieldname": "informacion_general_section",
+   "fieldtype": "Section Break",
+   "label": "Informacion General"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Codigo",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre",
+   "reqd": 1
+  },
+  {
+   "fieldname": "naturaleza_financiera",
+   "fieldtype": "Link",
+   "label": "Naturaleza Financiera",
+   "options": "Naturaleza Financiera"
+  },
+  {
+   "fetch_from": "naturaleza_financiera.nombre",
+   "fieldname": "nombre_naturaleza",
+   "fieldtype": "Data",
+   "label": "Nombre Naturaleza"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Small Text",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "column_break_ausa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "evento_financiero",
+   "fieldtype": "Link",
+   "label": "Evento Financiero",
+   "options": "Evento Financiero"
+  },
+  {
+   "fetch_from": "evento_financiero.nombre",
+   "fieldname": "nombre_ef",
+   "fieldtype": "Data",
+   "label": "Nombre EF"
+  },
+  {
+   "columns": 1,
+   "fieldname": "nodo_efi_base",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nodo EFI Base",
+   "options": "Estructura Financiera Institucional"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "nodo_efi_base.nombre",
+   "fieldname": "nombre_nodo_efi_base",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre EFI Base",
+   "read_only": 1
+  },
+  {
+   "fieldname": "prioridad",
+   "fieldtype": "Int",
+   "label": "Prioridad"
+  },
+  {
+   "default": "0",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "label": "Activo"
+  },
+  {
+   "fieldname": "section_break_wpyl",
+   "fieldtype": "Section Break",
+   "label": "Vigencia"
+  },
+  {
+   "fieldname": "fecha_inicio",
+   "fieldtype": "Date",
+   "label": "Fecha Inicio"
+  },
+  {
+   "fieldname": "fecha_fin",
+   "fieldtype": "Date",
+   "label": "Fecha Fin"
+  },
+  {
+   "fieldname": "column_break_legx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "label": "Version"
+  },
+  {
+   "fieldname": "section_break_opfi",
+   "fieldtype": "Section Break",
+   "label": "Configuracion"
+  },
+  {
+   "default": "0",
+   "fieldname": "ejecutar_automaticamente",
+   "fieldtype": "Check",
+   "label": "Ejecutar Automaticamente"
+  },
+  {
+   "default": "0",
+   "fieldname": "permitir_manual",
+   "fieldtype": "Check",
+   "label": "Permitir Ejecucion Manual"
+  },
+  {
+   "default": "0",
+   "fieldname": "detener_si_error",
+   "fieldtype": "Check",
+   "label": "Detener si hay error"
+  },
+  {
+   "fieldname": "column_break_wrix",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_bjqy",
+   "fieldtype": "Section Break",
+   "label": "Distribucion Financiera"
+  },
+  {
+   "fieldname": "politica_financiera_accion",
+   "fieldtype": "Table",
+   "label": "Acciones",
+   "options": "Politica Financiera Accion"
+  },
+  {
+   "fieldname": "section_break_usxh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:01:29.107867",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Politica Financiera",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre"
+}

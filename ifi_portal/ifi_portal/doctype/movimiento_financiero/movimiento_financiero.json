@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-07-24 14:13:04.892787",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "secuencia",
+  "rol_del_movimiento",
+  "nodo_efi",
+  "unidad_organizacional",
+  "valor",
+  "moneda",
+  "accion_financiera",
+  "politica_financiera",
+  "movimiento_relacionado",
+  "procesado",
+  "contabilizado"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "secuencia",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Secuencia"
+  },
+  {
+   "columns": 2,
+   "fieldname": "rol_del_movimiento",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Rol del Movimiento",
+   "options": "Rol del Movimiento"
+  },
+  {
+   "columns": 2,
+   "fieldname": "nodo_efi",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nodo EFI",
+   "options": "Estructura Financiera Institucional"
+  },
+  {
+   "columns": 2,
+   "fieldname": "unidad_organizacional",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unidad Organizacional",
+   "options": "Unidad Organizacional"
+  },
+  {
+   "columns": 2,
+   "fieldname": "valor",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor"
+  },
+  {
+   "columns": 2,
+   "fieldname": "moneda",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Moneda",
+   "options": "Currency"
+  },
+  {
+   "columns": 2,
+   "fieldname": "accion_financiera",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Accion Financiera",
+   "options": "Accion Financiera"
+  },
+  {
+   "columns": 2,
+   "fieldname": "politica_financiera",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Politica Financiera",
+   "options": "Politica Financiera"
+  },
+  {
+   "columns": 2,
+   "fieldname": "movimiento_relacionado",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Movimiento Relacionado",
+   "options": "Movimiento Financiero"
+  },
+  {
+   "default": "0",
+   "fieldname": "procesado",
+   "fieldtype": "Check",
+   "label": "Procesado"
+  },
+  {
+   "default": "0",
+   "fieldname": "contabilizado",
+   "fieldtype": "Check",
+   "label": "Contabilizado"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-26 15:59:58.485243",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Movimiento Financiero",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

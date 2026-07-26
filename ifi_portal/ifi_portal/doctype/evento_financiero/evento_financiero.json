@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2026-07-24 11:52:56.525847",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informacion_general_section",
+  "codigo",
+  "nombre",
+  "activo",
+  "column_break_usxh",
+  "descripcion",
+  "section_break_lesg",
+  "genera_movimientos",
+  "afecta_presupuestos",
+  "genera_contabilidad",
+  "requiere_aprobacion"
+ ],
+ "fields": [
+  {
+   "fieldname": "informacion_general_section",
+   "fieldtype": "Section Break",
+   "label": "Informacion General"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "label": "Codigo",
+   "unique": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre"
+  },
+  {
+   "default": "0",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "label": "Activo"
+  },
+  {
+   "fieldname": "column_break_usxh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Small Text",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "section_break_lesg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "genera_movimientos",
+   "fieldtype": "Check",
+   "label": "Genera Movimientos"
+  },
+  {
+   "default": "0",
+   "fieldname": "afecta_presupuestos",
+   "fieldtype": "Check",
+   "label": "Afecta Presupuestos"
+  },
+  {
+   "default": "0",
+   "fieldname": "genera_contabilidad",
+   "fieldtype": "Check",
+   "label": "Genera Contabilidad"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_aprobacion",
+   "fieldtype": "Check",
+   "label": "Requiere Aprobacion"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:00:20.769193",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Evento Financiero",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre"
+}

@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2026-07-24 10:24:36.883444",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "codigo",
+  "nombre",
+  "activa",
+  "column_break_wykd",
+  "descripcion",
+  "section_break_yjjn",
+  "genera_movimiento",
+  "modifica_presupuesto",
+  "genera_contabilidad",
+  "requiere_nodo",
+  "requiere_metodo",
+  "requiere_valor",
+  "permite_continuar"
+ ],
+ "fields": [
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "label": "Codigo",
+   "unique": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre"
+  },
+  {
+   "default": "0",
+   "fieldname": "activa",
+   "fieldtype": "Check",
+   "label": "Activa"
+  },
+  {
+   "fieldname": "column_break_wykd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Small Text",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "section_break_yjjn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "genera_movimiento",
+   "fieldtype": "Check",
+   "label": "Genera Movimiento"
+  },
+  {
+   "default": "0",
+   "fieldname": "modifica_presupuesto",
+   "fieldtype": "Check",
+   "label": "Modifica Presupuesto"
+  },
+  {
+   "default": "0",
+   "fieldname": "genera_contabilidad",
+   "fieldtype": "Check",
+   "label": "Genera Contabilidad"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_nodo",
+   "fieldtype": "Check",
+   "label": "Requiere Nodo Destino"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_metodo",
+   "fieldtype": "Check",
+   "label": "Requiere Metodo Calculo"
+  },
+  {
+   "default": "0",
+   "fieldname": "requiere_valor",
+   "fieldtype": "Check",
+   "label": "Requiere Valor"
+  },
+  {
+   "default": "0",
+   "fieldname": "permite_continuar",
+   "fieldtype": "Check",
+   "label": "Permite Continuar Flujo"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:00:36.695159",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Accion Financiera",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre"
+}

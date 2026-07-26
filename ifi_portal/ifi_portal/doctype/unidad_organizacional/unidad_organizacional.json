@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2026-07-14 09:54:54.046758",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informaci\u00f3n_general_section",
+  "codigo",
+  "nombre",
+  "organization_class",
+  "parent_unidad_organizacional",
+  "is_group",
+  "old_parent",
+  "column_break_hxal",
+  "empresa",
+  "centro_de_costo",
+  "enabled",
+  "lft",
+  "rgt"
+ ],
+ "fields": [
+  {
+   "fieldname": "informaci\u00f3n_general_section",
+   "fieldtype": "Section Break",
+   "label": "Informaci\u00f3n General"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "C\u00f3digo",
+   "unique": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "organization_class",
+   "fieldtype": "Link",
+   "label": "Clase Organizacional",
+   "options": "Clase Organizacional"
+  },
+  {
+   "fieldname": "parent_unidad_organizacional",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Unidad Organizacional",
+   "options": "Unidad Organizacional"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Old Parent",
+   "options": "Unidad Organizacional"
+  },
+  {
+   "fieldname": "column_break_hxal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "empresa",
+   "fieldtype": "Link",
+   "label": "Empresa",
+   "options": "Company"
+  },
+  {
+   "fieldname": "centro_de_costo",
+   "fieldtype": "Link",
+   "label": "Centro de costo",
+   "options": "Cost Center"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Activo"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2026-07-26 16:08:18.776040",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Unidad Organizacional",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_unidad_organizacional",
+ "owner": "cesar.perezv@cruzadaestudiantil.org",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Lider Distrital",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "codigo,nombre",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre",
+ "track_changes": 1
+}

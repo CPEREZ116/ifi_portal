@@ -1,0 +1,172 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "PRS-.YYYY.-.#########",
+ "creation": "2026-07-25 11:13:03.975615",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "inromacion_general_section",
+  "nombre",
+  "organizacion",
+  "unidad_organizacional",
+  "column_break_cqwl",
+  "fiscal_year",
+  "version",
+  "section_break_zeuu",
+  "items_presupuesto",
+  "section_break_bput",
+  "tipo_generacion",
+  "presupuesto_origen",
+  "column_break_mnhp",
+  "generado_por",
+  "fecha_generacion",
+  "section_break_gblr",
+  "permite_ajustes",
+  "bloqueado",
+  "column_break_fjkh",
+  "observaciones"
+ ],
+ "fields": [
+  {
+   "fieldname": "inromacion_general_section",
+   "fieldtype": "Section Break",
+   "label": "Inromacion General"
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre"
+  },
+  {
+   "fieldname": "organizacion",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Organizacion",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "unidad_organizacional",
+   "fieldtype": "Link",
+   "label": "Unidad Organizacional",
+   "options": "Unidad Organizacional",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cqwl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "Vigencia",
+   "options": "Fiscal Year Company"
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Int",
+   "label": "Version"
+  },
+  {
+   "fieldname": "section_break_zeuu",
+   "fieldtype": "Section Break",
+   "label": "Detalle Presupuestal"
+  },
+  {
+   "fieldname": "items_presupuesto",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Presupuesto Detalle"
+  },
+  {
+   "fieldname": "section_break_bput",
+   "fieldtype": "Section Break",
+   "label": "Origen"
+  },
+  {
+   "fieldname": "tipo_generacion",
+   "fieldtype": "Select",
+   "label": "Tipo de Generaci\u00f3n",
+   "options": "Manual\nInicializaci\u00f3n A\u00f1o\nCopia\nImportaci\u00f3n Excel"
+  },
+  {
+   "fieldname": "presupuesto_origen",
+   "fieldtype": "Link",
+   "label": "Presupuesto Origen",
+   "options": "Presupuesto"
+  },
+  {
+   "fieldname": "column_break_mnhp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "generado_por",
+   "fieldtype": "Link",
+   "label": "Generado por",
+   "options": "User"
+  },
+  {
+   "default": "Today",
+   "fieldname": "fecha_generacion",
+   "fieldtype": "Datetime",
+   "label": "Fecha de Generacion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gblr",
+   "fieldtype": "Section Break",
+   "label": "Configuraci\u00f3n"
+  },
+  {
+   "default": "1",
+   "fieldname": "permite_ajustes",
+   "fieldtype": "Check",
+   "label": "Permite Ajustes"
+  },
+  {
+   "default": "0",
+   "fieldname": "bloqueado",
+   "fieldtype": "Check",
+   "label": "Bloqueado"
+  },
+  {
+   "fieldname": "column_break_fjkh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 15:59:22.948334",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Presupuesto",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

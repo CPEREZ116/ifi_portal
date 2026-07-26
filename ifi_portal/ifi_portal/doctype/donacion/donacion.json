@@ -1,0 +1,221 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "RC-.YYYY.-.#########",
+ "creation": "2026-07-14 19:56:02.650962",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "datos_generales_section",
+  "unidad_organizacional",
+  "nombre_uo",
+  "donante",
+  "forma_de_pago",
+  "banco_recaudo",
+  "fecha",
+  "column_break_nxyv",
+  "estado",
+  "nombre",
+  "identificacion",
+  "correo_electr\u00f3nico",
+  "column_break_umda",
+  "usuario_actual",
+  "calendario",
+  "entrega",
+  "planilla",
+  "seccion_donaciones",
+  "conceptos_de_donacion",
+  "total",
+  "seccion_distribuciones",
+  "distribuciones"
+ ],
+ "fields": [
+  {
+   "fieldname": "datos_generales_section",
+   "fieldtype": "Section Break",
+   "label": "Datos Generales"
+  },
+  {
+   "fieldname": "unidad_organizacional",
+   "fieldtype": "Link",
+   "label": "Unidad Organizacional",
+   "options": "Unidad Organizacional",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "unidad_organizacional.nombre",
+   "fieldname": "nombre_uo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre U.O"
+  },
+  {
+   "fieldname": "donante",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Donante",
+   "options": "Hoja de Vida Discipulo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "forma_de_pago",
+   "fieldtype": "Link",
+   "label": "Forma de Pago",
+   "options": "Forma de Pago",
+   "reqd": 1
+  },
+  {
+   "fieldname": "banco_recaudo",
+   "fieldtype": "Link",
+   "label": "Banco Recaudo",
+   "options": "Bank Account"
+  },
+  {
+   "default": "Today",
+   "fieldname": "fecha",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nxyv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estado",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "Borrador\nAprobado\nConfirmado\nContabilizado\nAnulado"
+  },
+  {
+   "fetch_from": "donante.nombre",
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "donante.documento_principal",
+   "fieldname": "identificacion",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "C.C/RUC/RUT"
+  },
+  {
+   "fetch_from": "donante.correo_electronico",
+   "fieldname": "correo_electr\u00f3nico",
+   "fieldtype": "Data",
+   "label": "Correo Electr\u00f3nico"
+  },
+  {
+   "fieldname": "column_break_umda",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "usuario_actual",
+   "fieldtype": "Link",
+   "label": "Usuario Actual",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calendario",
+   "fieldtype": "Link",
+   "label": "Calendario",
+   "options": "Calendario",
+   "read_only": 1
+  },
+  {
+   "fieldname": "entrega",
+   "fieldtype": "Int",
+   "label": "Entrega",
+   "read_only": 1
+  },
+  {
+   "fieldname": "planilla",
+   "fieldtype": "Link",
+   "label": "Planilla",
+   "options": "Planilla"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "seccion_donaciones",
+   "fieldtype": "Section Break",
+   "label": "Detalle de Donaciones"
+  },
+  {
+   "columns": 10,
+   "fieldname": "conceptos_de_donacion",
+   "fieldtype": "Table",
+   "label": "Conceptos de Donaci\u00f3n",
+   "options": "Concepto de Donacion"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "seccion_distribuciones",
+   "fieldtype": "Section Break",
+   "label": "Distribucion de donaciones"
+  },
+  {
+   "fieldname": "distribuciones",
+   "fieldtype": "Table",
+   "options": "Distribucion Donacion",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:07:34.184598",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Donacion",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Lider Distrital",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre",
+ "track_changes": 1,
+ "track_seen": 1
+}

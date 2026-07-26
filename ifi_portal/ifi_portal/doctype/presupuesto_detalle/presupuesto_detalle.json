@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-07-25 11:37:25.770676",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "identificacion_section",
+  "nodo_efi",
+  "orden",
+  "es_calculado",
+  "permite_movimientos",
+  "valor_mensual_presupuestado",
+  "section_break_ornv",
+  "observaciones"
+ ],
+ "fields": [
+  {
+   "fieldname": "identificacion_section",
+   "fieldtype": "Section Break",
+   "label": "Identificacion"
+  },
+  {
+   "columns": 2,
+   "fieldname": "nodo_efi",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nodo EFI",
+   "options": "Estructura Financiera Institucional"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "nodo_efi.orden",
+   "fieldname": "orden",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Orden"
+  },
+  {
+   "columns": 2,
+   "default": "0",
+   "fetch_from": "nodo_efi.es_calculado",
+   "fieldname": "es_calculado",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Es Calculado"
+  },
+  {
+   "default": "0",
+   "fetch_from": "nodo_efi.permite_movimientos",
+   "fieldname": "permite_movimientos",
+   "fieldtype": "Check",
+   "label": "Permite Movimientos"
+  },
+  {
+   "fieldname": "valor_mensual_presupuestado",
+   "fieldtype": "Currency",
+   "label": "Valor Mensual Presupuestado"
+  },
+  {
+   "fieldname": "section_break_ornv",
+   "fieldtype": "Section Break",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-26 15:59:11.767123",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Presupuesto Detalle",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

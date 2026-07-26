@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "AUO-.YYYY.-.#########",
+ "creation": "2026-07-18 20:30:16.005203",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "usuario",
+  "unidad_operativa",
+  "nombre_uo",
+  "cargo",
+  "activo",
+  "column_break_rfie",
+  "fecha_inicio",
+  "fecha_fin",
+  "observaciones",
+  "section_break_dcyx",
+  "responsabilidades_del_cargo"
+ ],
+ "fields": [
+  {
+   "fieldname": "usuario",
+   "fieldtype": "Link",
+   "label": "Usuario",
+   "options": "User"
+  },
+  {
+   "fieldname": "unidad_operativa",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Unidad Operativa",
+   "options": "Unidad Organizacional"
+  },
+  {
+   "fetch_from": "unidad_operativa.nombre",
+   "fieldname": "nombre_uo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Nombre U.O."
+  },
+  {
+   "fieldname": "cargo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cargo",
+   "options": "Cargo"
+  },
+  {
+   "default": "1",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Activo"
+  },
+  {
+   "fieldname": "column_break_rfie",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fecha_inicio",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Fecha Inicio"
+  },
+  {
+   "fieldname": "fecha_fin",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Fecha Fin"
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "section_break_dcyx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "responsabilidades_del_cargo",
+   "fieldtype": "Table",
+   "label": "Responsabilidades del Cargo",
+   "options": "Responsabilidad del Cargo"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 16:06:31.021326",
+ "modified_by": "Administrator",
+ "module": "IFI Portal",
+ "name": "Asignacion Unidad Operativa",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Lider Distrital",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "usuario"
+}
