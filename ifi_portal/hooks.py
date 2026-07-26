@@ -264,7 +264,51 @@ app_include_css = [
     "/assets/ifi_portal/css/ict-responsive.css",
 ]
 
+permission_query_conditions = {
+    "Donacion":
+        "ifi_portal.security.hooks.donacion_query",
+
+    "Recibo Donacion":
+        "ifi_portal.security.hooks.recibo_donacion_query",
+
+    "Planilla":
+        "ifi_portal.security.hooks.planilla_query",
+}
+
 app_include_js = [
     "/assets/ifi_portal/js/swiper-bundle.min.js",
     "/assets/ifi_portal/js/ict.js",
+    "/assets/ifi_portal/js/security.js",
 ]
+
+fixtures = [
+    {
+        "dt": "Workspace"
+    },
+    {
+        "dt": "Print Format",
+        "filters": [
+            ["module", "=", "IFI Portal"]
+        ]
+    },
+    {
+        "dt": "Report",
+        "filters": [
+            ["module", "=", "IFI Portal"]
+        ]
+    },
+    {
+        "dt": "Client Script",
+        "filters": [
+            ["module", "=", "IFI Portal"]
+        ]
+    },
+    {
+        "dt": "Server Script"
+    },
+    {
+        "dt": "Workflow"
+    }
+]
+
+

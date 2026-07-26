@@ -1,0 +1,268 @@
+[
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [
+   {
+    "fieldname": "concepto",
+    "fieldtype": "Link",
+    "label": "Concepto",
+    "options": "Concepto",
+    "width": 0
+   },
+   {
+    "fieldname": "valor",
+    "fieldtype": "Currency",
+    "label": "Valor",
+    "options": "Valor",
+    "width": 0
+   }
+  ],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "desde",
+    "fieldtype": "Date",
+    "label": "Desde",
+    "mandatory": 0,
+    "options": null,
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "hasta",
+    "fieldtype": "Date",
+    "label": "Hasta",
+    "mandatory": 0,
+    "options": null,
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "unidad_organizacional",
+    "fieldtype": "Link",
+    "label": "Unidad Organizacional",
+    "mandatory": 0,
+    "options": "Unidad Organizacional",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": "Company Letterhead - Grey",
+  "modified": "2026-07-23 11:07:59.789276",
+  "module": "IFI Portal",
+  "name": "Donaciones por Concepto",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Donacion",
+  "reference_report": null,
+  "report_name": "Donaciones por Concepto",
+  "report_script": "condiciones = []\r\nvalores = {}\r\n\r\n# ----------------------------------------------------------\r\n# Estados válidos\r\n# ----------------------------------------------------------\r\n\r\ncondiciones.append(\"\"\"\r\nd.estado IN (\r\n    'Aprobado',\r\n    'Confirmado',\r\n    'Contabilizado'\r\n)\r\n\"\"\")\r\n\r\n# ----------------------------------------------------------\r\n# Fechas\r\n# ----------------------------------------------------------\r\n\r\nif filters.get(\"desde\"):\r\n    condiciones.append(\"d.fecha >= %(desde)s\")\r\n    valores[\"desde\"] = filters.get(\"desde\")\r\n\r\nif filters.get(\"hasta\"):\r\n    condiciones.append(\"d.fecha <= %(hasta)s\")\r\n    valores[\"hasta\"] = filters.get(\"hasta\")\r\n\r\n# ----------------------------------------------------------\r\n# Unidad Organizacional\r\n# ----------------------------------------------------------\r\n\r\nunidad = filters.get(\"unidad_organizacional\")\r\n\r\n# Si el usuario no seleccionó una unidad,\r\n# buscar la que tiene asignada.\r\nif not unidad:\r\n\r\n    if frappe.session.user != \"Administrator\" and \\\r\n       \"System Manager\" not in frappe.get_roles():\r\n\r\n        unidad = frappe.db.get_value(\r\n            \"Asignacion Usuario IFI\",\r\n            {\r\n                \"usuario\": frappe.session.user,\r\n                \"activo\": 1\r\n            },\r\n            \"unidad_organizacional\"\r\n        )\r\n\r\n# Si ya tenemos una unidad (del filtro o de la asignación),\r\n# incluir toda la rama del árbol.\r\nif unidad:\r\n\r\n    nodo = frappe.db.get_value(\r\n        \"Unidad Organizacional\",\r\n        unidad,\r\n        [\"lft\", \"rgt\"],\r\n        as_dict=True\r\n    )\r\n\r\n    if nodo:\r\n\r\n        condiciones.append(\"\"\"\r\n        d.unidad_organizacional IN (\r\n            SELECT name\r\n            FROM `tabUnidad Organizacional`\r\n            WHERE lft BETWEEN %(lft)s AND %(rgt)s\r\n        )\r\n        \"\"\")\r\n\r\n        valores[\"lft\"] = nodo.lft\r\n        valores[\"rgt\"] = nodo.rgt\r\n\r\n# ----------------------------------------------------------\r\n# WHERE\r\n# ----------------------------------------------------------\r\n\r\nwhere = \"\"\r\n\r\nif condiciones:\r\n    where = \"WHERE \" + \" AND \".join(condiciones)\r\n\r\n# ----------------------------------------------------------\r\n# Consulta\r\n# ----------------------------------------------------------\r\n\r\nresult = frappe.db.sql(f\"\"\"\r\nSELECT\r\n\r\n    cd.concepto,\r\n    SUM(cd.valor) AS valor\r\n\r\nFROM `tabConcepto de Donacion` cd\r\n\r\nINNER JOIN `tabDonacion` d\r\n    ON d.name = cd.parent\r\n\r\n{where}\r\n\r\nGROUP BY\r\n    cd.concepto\r\n\r\nORDER BY\r\n    valor DESC\r\n\"\"\", valores, as_dict=True)",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Lider Distrital"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "add_translate_data": 0,
+  "columns": [
+   {
+    "fieldname": "name",
+    "fieldtype": "Link",
+    "label": "Recibo",
+    "options": "Donacion",
+    "width": 0
+   },
+   {
+    "fieldname": "fecha",
+    "fieldtype": "Date",
+    "label": "Fecha",
+    "options": null,
+    "width": 0
+   },
+   {
+    "fieldname": "nombre",
+    "fieldtype": "Data",
+    "label": "Nombre Donante",
+    "options": null,
+    "width": 220
+   },
+   {
+    "fieldname": "documento_principal",
+    "fieldtype": "Data",
+    "label": "C.C./RUC/NIT",
+    "options": null,
+    "width": 140
+   },
+   {
+    "fieldname": "donante",
+    "fieldtype": "Link",
+    "label": "Donante",
+    "options": "Customer",
+    "width": 140
+   },
+   {
+    "fieldname": "unidad_organizacional",
+    "fieldtype": "Link",
+    "label": "Unidad Organizacional",
+    "options": "Unidad Organizacional",
+    "width": 0
+   },
+   {
+    "fieldname": "nombre_unidad_organizacional",
+    "fieldtype": "Data",
+    "label": "Nombre Unidad",
+    "options": null,
+    "width": 140
+   },
+   {
+    "fieldname": "concepto",
+    "fieldtype": "Link",
+    "label": "Concepto",
+    "options": "Concepto",
+    "width": 140
+   },
+   {
+    "fieldname": "subconcepto",
+    "fieldtype": "Link",
+    "label": "Subconcepto",
+    "options": "Subconcepto",
+    "width": 0
+   },
+   {
+    "fieldname": "valor",
+    "fieldtype": "Currency",
+    "label": "Valor",
+    "options": null,
+    "width": 0
+   }
+  ],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "calendario",
+    "fieldtype": "Link",
+    "label": "Calendario",
+    "mandatory": 0,
+    "options": "Calendario",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "desde",
+    "fieldtype": "Date",
+    "label": "Desde",
+    "mandatory": 0,
+    "options": null,
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "hasta",
+    "fieldtype": "Date",
+    "label": "Hasta",
+    "mandatory": 0,
+    "options": null,
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "unidad_organizacional",
+    "fieldtype": "Link",
+    "label": "Unidad Organizacional",
+    "mandatory": 0,
+    "options": "Unidad Organizacional",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "donante",
+    "fieldtype": "Link",
+    "label": "Donante",
+    "mandatory": 0,
+    "options": "Hoja de Vida Discipulo",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "concepto",
+    "fieldtype": "Link",
+    "label": "Concepto",
+    "mandatory": 0,
+    "options": "Concepto",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "subconcepto",
+    "fieldtype": "Link",
+    "label": "Subconcepto",
+    "mandatory": 0,
+    "options": "Subconcepto",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "estado",
+    "fieldtype": "Select",
+    "label": "Estado",
+    "mandatory": 0,
+    "options": "Todos\nAprobado\nConfirmado\nContabilizado\nAnulado",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "agrupar_por",
+    "fieldtype": "Select",
+    "label": "Agrupar por",
+    "mandatory": 0,
+    "options": "Detalle\nConcepto\nSubconcepto\nConcepto y Subconcepto\nDonante\nUnidad Organizacional",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": "",
+  "json": null,
+  "letter_head": "Company Letterhead - Grey",
+  "modified": "2026-07-23 21:50:28.230988",
+  "module": "IFI Portal",
+  "name": "Reporte Analítico de Donaciones",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Donacion",
+  "reference_report": null,
+  "report_name": "Reporte Analítico de Donaciones",
+  "report_script": "filters = filters or {}\r\n\r\nagrupar_por = filters.get(\"agrupar_por\") or \"Detalle\"\r\n\r\n# ==========================================================\r\n# FILTROS\r\n# ==========================================================\r\n\r\ncondiciones = [\r\n    \"IFNULL(d.unidad_organizacional,'')<>''\"\r\n]\r\n\r\nvalores = {}\r\n\r\n# ==========================================================\r\n# SEGURIDAD POR UNIDAD OPERATIVA\r\n# ==========================================================\r\n\r\nusuario = frappe.session.user\r\n\r\nasignaciones = frappe.get_all(\r\n    \"Asignacion Unidad Operativa\",\r\n    filters={\"usuario\": usuario},\r\n    pluck=\"unidad_operativa\"\r\n)\r\n\r\nunidades_permitidas = []\r\n\r\nfor unidad in asignaciones:\r\n\r\n    nodo = frappe.db.get_value(\r\n        \"Unidad Organizacional\",\r\n        unidad,\r\n        [\"lft\", \"rgt\"],\r\n        as_dict=True\r\n    )\r\n\r\n    if nodo:\r\n\r\n        hijos = frappe.get_all(\r\n            \"Unidad Organizacional\",\r\n            filters={\r\n                \"lft\": [\">=\", nodo.lft],\r\n                \"rgt\": [\"<=\", nodo.rgt]\r\n            },\r\n            pluck=\"name\"\r\n        )\r\n\r\n        unidades_permitidas.extend(hijos)\r\n\r\n# Eliminar duplicados\r\nunidades_permitidas = list(set(unidades_permitidas))\r\n\r\n# Si el usuario no tiene asignaciones, no verá información\r\nif not unidades_permitidas:\r\n    condiciones.append(\"1 = 0\")\r\nelse:\r\n    condiciones.append(\"d.unidad_organizacional IN %(unidades_permitidas)s\")\r\n    valores[\"unidades_permitidas\"] = tuple(unidades_permitidas)\r\n    \r\n    \r\n\r\n\r\nif filters.get(\"calendario\"):\r\n    condiciones.append(\"d.calendario=%(calendario)s\")\r\n    valores[\"calendario\"] = filters.get(\"calendario\")\r\n\r\nif filters.get(\"desde\"):\r\n    condiciones.append(\"d.fecha>=%(desde)s\")\r\n    valores[\"desde\"] = filters.get(\"desde\")\r\n\r\nif filters.get(\"hasta\"):\r\n    condiciones.append(\"d.fecha<=%(hasta)s\")\r\n    valores[\"hasta\"] = filters.get(\"hasta\")\r\n\r\nif filters.get(\"donante\"):\r\n    condiciones.append(\"d.donante=%(donante)s\")\r\n    valores[\"donante\"] = filters.get(\"donante\")\r\n\r\nif filters.get(\"concepto\"):\r\n    condiciones.append(\"cd.concepto=%(concepto)s\")\r\n    valores[\"concepto\"] = filters.get(\"concepto\")\r\n\r\nif filters.get(\"subconcepto\"):\r\n    condiciones.append(\"cd.subconcepto=%(subconcepto)s\")\r\n    valores[\"subconcepto\"] = filters.get(\"subconcepto\")\r\n\r\nif filters.get(\"estado\") and filters.get(\"estado\") != \"Todos\":\r\n    condiciones.append(\"d.estado=%(estado)s\")\r\n    valores[\"estado\"] = filters.get(\"estado\")\r\n\r\n# Unidad Organizacional con jerarquía\r\n\r\nif filters.get(\"unidad_organizacional\"):\r\n\r\n    nodo = frappe.db.get_value(\r\n        \"Unidad Organizacional\",\r\n        filters.get(\"unidad_organizacional\"),\r\n        [\"lft\", \"rgt\"],\r\n        as_dict=True\r\n    )\r\n\r\n    if nodo:\r\n        condiciones.append(\"\"\"\r\n            d.unidad_organizacional IN (\r\n                SELECT name\r\n                FROM `tabUnidad Organizacional`\r\n                WHERE lft BETWEEN %(lft)s AND %(rgt)s\r\n            )\r\n        \"\"\")\r\n\r\n        valores[\"lft\"] = nodo.lft\r\n        valores[\"rgt\"] = nodo.rgt\r\n\r\nwhere = \"\"\r\n\r\nif condiciones:\r\n    where = \"WHERE \" + \" AND \".join(condiciones)\r\n\r\n# ==========================================================\r\n# AGRUPACIÓN\r\n# ==========================================================\r\n\r\nselect = \"\"\"\r\n    d.name,\r\n    d.fecha,\r\n    d.donante,\r\n    c.nombre,\r\n    c.documento_principal,\r\n    d.unidad_organizacional,\r\n    uo.nombre AS nombre_unidad_organizacional,\r\n    cd.concepto,\r\n    cd.subconcepto,\r\n    cd.valor\r\n\"\"\"\r\n\r\ngroup_by = \"\"\r\n\r\norder_by = \"d.fecha DESC,d.name DESC\"\r\n\r\nif agrupar_por == \"Concepto\":\r\n\r\n    select = \"\"\"\r\n        cd.concepto,\r\n        SUM(cd.valor) valor\r\n    \"\"\"\r\n\r\n    group_by = \"GROUP BY cd.concepto\"\r\n\r\n    order_by = \"valor DESC\"\r\n\r\nelif agrupar_por == \"Subconcepto\":\r\n\r\n    select = \"\"\"\r\n        cd.subconcepto,\r\n        SUM(cd.valor) valor\r\n    \"\"\"\r\n\r\n    group_by = \"GROUP BY cd.subconcepto\"\r\n\r\n    order_by = \"valor DESC\"\r\n\r\nelif agrupar_por == \"Concepto y Subconcepto\":\r\n\r\n    select = \"\"\"\r\n        cd.concepto,\r\n        cd.subconcepto,\r\n        SUM(cd.valor) valor\r\n    \"\"\"\r\n\r\n    group_by = \"\"\"\r\n        GROUP BY\r\n            cd.concepto,\r\n            cd.subconcepto\r\n    \"\"\"\r\n\r\n    order_by = \"valor DESC\"\r\n\r\nelif agrupar_por == \"Donante\":\r\n\r\n    select = \"\"\"\r\n        '' AS name,\r\n        NULL AS fecha,\r\n        d.donante,\r\n        c.nombre,\r\n        c.documento_principal,\r\n        '' AS unidad_organizacional,\r\n        '' AS concepto,\r\n        '' AS subconcepto,\r\n        SUM(cd.valor) AS valor\r\n    \"\"\"\r\n\r\n    group_by = \"\"\"\r\n        GROUP BY\r\n            d.donante,\r\n            c.nombre,\r\n            c.documento_principal\r\n    \"\"\"\r\n\r\n    order_by = \"valor DESC\"\r\n\r\nelif agrupar_por == \"Unidad Organizacional\":\r\n\r\n    select = \"\"\"\r\n        '' AS name,\r\n        NULL AS fecha,\r\n        '' AS donante,\r\n        '' AS nombre,\r\n        '' AS documento_principal,\r\n        d.unidad_organizacional,\r\n        uo.nombre AS nombre_unidad_organizacional,\r\n        '' AS concepto,\r\n        '' AS subconcepto,\r\n        SUM(cd.valor) AS valor\r\n    \"\"\"\r\n\r\n    group_by = \"\"\"\r\n        GROUP BY\r\n            d.unidad_organizacional,\r\n            uo.nombre\r\n    \"\"\"\r\n\r\n    order_by = \"uo.nombre\"\r\n\r\n\r\n# ==========================================================\r\n# CONSULTA\r\n# ==========================================================\r\n\r\nresult = frappe.db.sql(f\"\"\"\r\n\r\nSELECT\r\n\r\n{select}\r\n\r\nFROM `tabConcepto de Donacion` cd\r\n\r\nINNER JOIN `tabDonacion` d\r\n    ON d.name = cd.parent\r\n    \r\n    LEFT JOIN `tabHoja de Vida Discipulo` c\r\n    ON c.name = d.donante\r\n    LEFT JOIN `tabUnidad Organizacional` uo\r\n    ON uo.name = d.unidad_organizacional\r\n\r\n{where}\r\n\r\n{group_by}\r\n\r\nORDER BY\r\n    {order_by}\r\n\r\n\"\"\", valores, as_dict=True)\r\n\r\n",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Lider Distrital"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ }
+]
