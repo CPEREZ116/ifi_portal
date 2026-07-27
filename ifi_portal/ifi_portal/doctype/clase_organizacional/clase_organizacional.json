@@ -62,8 +62,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-26 16:08:13.582917",
- "modified_by": "Administrator",
+ "modified": "2026-07-26 18:26:28.625100",
+ "modified_by": "cesar.perezv@cruzadaestudiantil.org",
  "module": "IFI Portal",
  "name": "Clase Organizacional",
  "naming_rule": "By fieldname",
@@ -88,6 +88,16 @@
    "read": 1,
    "report": 1,
    "role": "Lider Distrital",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Feligres",
    "share": 1,
    "write": 1
   }

@@ -69,8 +69,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-26 16:07:45.213982",
- "modified_by": "Administrator",
+ "modified": "2026-07-26 18:24:43.962029",
+ "modified_by": "cesar.perezv@cruzadaestudiantil.org",
  "module": "IFI Portal",
  "name": "Calendario",
  "naming_rule": "Expression (old style)",
@@ -95,6 +95,15 @@
    "read": 1,
    "report": 1,
    "role": "Lider Distrital",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Feligres",
    "share": 1
   }
  ],

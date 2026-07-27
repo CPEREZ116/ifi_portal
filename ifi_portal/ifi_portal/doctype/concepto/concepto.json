@@ -11,7 +11,11 @@
   "nombre",
   "requiere_subconcepto",
   "activo",
-  "descripcion"
+  "descripcion",
+  "mostrar_portal",
+  "grupo_portal",
+  "imagen_portal",
+  "orden_visualizacion"
  ],
  "fields": [
   {
@@ -50,13 +54,35 @@
    "fieldname": "descripcion",
    "fieldtype": "Small Text",
    "label": "Descripci\u00f3n"
+  },
+  {
+   "fieldname": "grupo_portal",
+   "fieldtype": "Select",
+   "label": "Grupo Portal",
+   "options": "Diezmos en general\nCursos de formaci\u00f3n\nCampamento El Redil\nCumplea\u00f1os Sr. Jes\u00fas\nPrimicias y ofrendas\nOtras donaciones\nOtros cumplea\u00f1os Sr. Jes\u00fas"
+  },
+  {
+   "fieldname": "imagen_portal",
+   "fieldtype": "Attach Image",
+   "label": "Imagen Portal"
+  },
+  {
+   "default": "0",
+   "fieldname": "mostrar_portal",
+   "fieldtype": "Check",
+   "label": "Mostrar Portal"
+  },
+  {
+   "fieldname": "orden_visualizacion",
+   "fieldtype": "Int",
+   "label": "Orden Visualizaci\u00f3n"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-26 16:08:05.982375",
- "modified_by": "Administrator",
+ "modified": "2026-07-26 18:41:29.885165",
+ "modified_by": "cesar.perezv@cruzadaestudiantil.org",
  "module": "IFI Portal",
  "name": "Concepto",
  "naming_rule": "By fieldname",
@@ -81,6 +107,16 @@
    "read": 1,
    "report": 1,
    "role": "Lider Distrital",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Feligres",
    "share": 1,
    "write": 1
   }
